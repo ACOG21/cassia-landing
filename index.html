@@ -833,7 +833,7 @@
     
     var revealSelector = ".usp-card, .urgency-card, .amenity, .check-list li, .backing-item, .agent-card, .fact, .faq-list details, .table-wrap, .lead-aside .row";
     var revealEls = document.querySelectorAll(revealSelector);
-    if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    if("IntersectionObserver" in window){
       var io = new IntersectionObserver(function(entries){
         entries.forEach(function(entry){
           if(entry.isIntersecting){ entry.target.classList.add("in-view"); io.unobserve(entry.target); }
